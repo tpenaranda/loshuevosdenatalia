@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', function () { return view('welcome'); });
+Route::get('/', function () { return view('under_construction'); });
+
+Route::get('/{anything?}', function () { return view('main'); });
