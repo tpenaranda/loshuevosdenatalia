@@ -1,3 +1,12 @@
+import 'vue-material/dist/theme/default.css'
+import 'vue-material/dist/vue-material.min.css'
+
+import Vue from 'vue'
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+import VueMaterial from 'vue-material'
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -9,6 +18,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+Vue.use(VueMaterial)
+
+const moment = require('moment')
+require('moment/locale/es')
+Vue.use(require('vue-moment'), { moment })
+
+Vue.use(VueAxios, axios)
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -17,10 +34,8 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const files = require.context('./', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

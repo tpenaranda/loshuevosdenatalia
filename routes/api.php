@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::apiResource('skus', 'API\SkuController', ['only' => 'index']);
+
+Route::middleware('throttle:10,1')->group(function () {
+    Route::apiResource('orders', 'API\OrderController', ['only' => 'store']);
 });

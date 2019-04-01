@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () { return view('under_construction'); });
+Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
+
+Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/{anything?}', function () { return view('main'); });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
