@@ -23,12 +23,12 @@ class SkusTableSeeder extends Seeder
             ],
             [
                 'name' => 'Gigante [30 cm]',
-                'price' => 350,
+                'price' => 1050,
             ],
         ];
 
         foreach ($skus as $sku) {
-            Sku::firstOrCreate(['slug' => str_slug($sku['name'])], [
+            Sku::updateOrCreate(['slug' => str_slug($sku['name'])], [
                 'name' => $sku['name'],
                 'price' => $sku['price'],
             ]);
