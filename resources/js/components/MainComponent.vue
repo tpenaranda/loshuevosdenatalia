@@ -132,8 +132,6 @@
         required
     } from 'vuelidate/lib/validators'
 
-    const notEmpty = (str) => str && str.trim() !== ''
-
     export default {
         name: 'MainComponent',
         mixins: [

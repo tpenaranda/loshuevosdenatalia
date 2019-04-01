@@ -38,17 +38,12 @@ class OrderController extends Controller
 
         $order = $user->orders()->create(['status' => Order::STATUS_CREATED]);
 
-        if (is_array($request->json('data.skus'))) {
-            $order->skus()->sync(array_pluck($request->json('data.skus'), 'id'));
-
-            $order->refresh();
-
-            foreach ($order->skus as $sku) {
-                $skuData = collect($request->json('data.skus'))->where('id', $sku->id)->first();
-                $sku->pivot->fill($skuData)->save();
+        if (is_array($skus = $request->json('data.skus'))) {
+            foreach ($skus as $sku) {
+                $order->skus()->attach($sku['id'], ['data' => $sku['data']]);
             }
         }
 
-        return $order;
+        return $order->load('skus');
     }
 }
