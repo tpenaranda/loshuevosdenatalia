@@ -36,10 +36,8 @@
         background: url(/images/easter_eggs.jpg);
         background-size: cover;
         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
         position: relative;
-        height: 360px;
+        height: 65vh;
     }
     .more-information {
         position: absolute;
