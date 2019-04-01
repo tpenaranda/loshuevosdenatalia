@@ -18,6 +18,7 @@ class Sku extends Model
     protected $hidden = [
         'created_at',
         'deleted_at',
+        'pivot',
         'updated_at',
     ];
 

@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
+    public function index()
+    {
+        return Order::all();
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -31,7 +36,7 @@ class OrderController extends Controller
             'name' => $request->json('data.user.name')
         ]);
 
-        $order = $user->orders()->create();
+        $order = $user->orders()->create(['status' => Order::STATUS_CREATED]);
 
         if (is_array($request->json('data.skus'))) {
             $order->skus()->sync(array_pluck($request->json('data.skus'), 'id'));

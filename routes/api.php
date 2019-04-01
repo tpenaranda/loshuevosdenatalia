@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::apiResource('skus', 'API\SkuController', ['only' => 'index']);
+Route::apiResource('orders', 'API\OrderController', ['only' => 'index']);
 
 Route::middleware('throttle:10,1')->group(function () {
     Route::apiResource('orders', 'API\OrderController', ['only' => 'store']);

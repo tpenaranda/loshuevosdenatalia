@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->text('notes')->nullable();
+            $table->smallInteger('status')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

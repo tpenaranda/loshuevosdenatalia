@@ -9,6 +9,16 @@ class Order extends Model
 {
     use SoftDeletes;
 
+    const STATUS_CREATED = 'created';
+    const STATUS_DELIVERED = 'delivered';
+    const STATUS_PREPARED = 'prepared';
+
+    const STATUSES = [
+        0 => self::STATUS_CREATED,
+        5 => self::STATUS_PREPARED,
+        10 => self::STATUS_DELIVERED,
+    ];
+
     protected $fillable = [
         'notes',
     ];
