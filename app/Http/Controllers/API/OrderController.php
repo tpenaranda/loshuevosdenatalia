@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return Order::all();
+        return Order::with('skus', 'user')->get();
     }
 
     public function store(Request $request)

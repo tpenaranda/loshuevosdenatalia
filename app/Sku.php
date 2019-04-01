@@ -27,4 +27,14 @@ class Sku extends Model
         'deleted_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
+
+    protected $appends = ['data'];
+
+    public function getDataAttribute()
+    {
+        if (!empty($this->pivot)) {
+            return $this->pivot->data;
+        }
+    }
+
 }
