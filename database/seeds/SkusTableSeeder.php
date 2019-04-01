@@ -14,15 +14,15 @@ class SkusTableSeeder extends Seeder
     {
         $skus = [
             [
-                'name' => 'Pequeño [8 cm]',
+                'name' => 'Pequeño',
                 'price' => 80,
             ],
             [
-                'name' => 'Grande [12 cm]',
+                'name' => 'Grande',
                 'price' => 120,
             ],
             [
-                'name' => 'Gigante [30 cm]',
+                'name' => 'Gigante',
                 'price' => 1050,
             ],
         ];

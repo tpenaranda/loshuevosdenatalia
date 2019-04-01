@@ -19,6 +19,7 @@ class OrderController extends Controller
             'data.notes' => 'string|nullable',
             'data.skus' => 'array',
             'data.skus.*.id' => 'required|exists:skus,id',
+            'data.skus.*.data.flavor' => 'string',
             'data.skus.*.data.text' => 'required|string',
             'data.user.name' => 'required|string',
             'data.user.phone.area' => 'required|digits_between:3,4',

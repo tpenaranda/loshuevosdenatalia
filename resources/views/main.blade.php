@@ -4,25 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="py-2" style="overflow-x: hidden">
-        <main-component></main-component>
+    <div id="app" style="overflow-x: hidden">
+        <div class="md-layout md-gutter">
+            <div class="md-layout-item px-0"></div>
+            <div class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100 md-elevation-4 px-0">
+                <header-component></header-component>
+                <top-component></top-component>
+                <main-component></main-component>
+            </div>
+            <div class="md-layout-item px-0"></div>
+        </div>
+        <div class="md-layout md-gutter">
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100 pt-2 pr-2">
+                <div class="md-caption text-center">
+                    <p>Made with <span class="text-danger">❤</span> at Rosario</p>
+                </div>
+            </div>
+            <div class="md-layout-item"></div>
+        </div>
     </div>
 </body>
 </html>

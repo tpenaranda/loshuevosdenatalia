@@ -25,8 +25,6 @@
         required
     } from 'vuelidate/lib/validators'
 
-    const notEmpty = (str) => str && str.trim() !== ''
-
     export default {
         name: 'MainComponent',
         mixins: [
@@ -39,7 +37,7 @@
                 return value.substr(0,1).toUpperCase() + value.substr(1);
             },
             formatSkus (skus) {
-                return skus.map((sku) => `${sku.name} (${sku.data['text']})`).join(" - ")
+                return skus.map((sku) => `${sku.name} (${sku.data['text']}) [${sku.data['flavor']}]`).join(" - ")
             }
         },
         data: () => ({
