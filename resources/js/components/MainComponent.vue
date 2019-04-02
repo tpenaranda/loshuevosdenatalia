@@ -39,7 +39,7 @@
                             </div>
                             <div class="md-layout-item md-size-20 py-0 text-right">
                                 <span @click="deleteOrderSku(index)">
-                                    <md-icon v-if="index" class="md-size-1x text-danger">delete_forever</md-icon>
+                                    <md-icon v-if="index || order.skus.length > 1" class="md-size-1x text-danger md-body-2">delete_forever</md-icon>
                                 </span>
                                 <span @click="addOrderSku">
                                     <md-icon v-if="index === order.skus.length - 1" class="md-size-1x text-info">add_box</md-icon>

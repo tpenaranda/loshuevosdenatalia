@@ -18,13 +18,9 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-Vue.use(VueMaterial)
-
-const moment = require('moment')
-require('moment/locale/es')
-Vue.use(require('vue-moment'), { moment })
-
 Vue.use(VueAxios, axios)
+
+Vue.use(VueMaterial)
 
 /**
  * The following block of code may be used to automatically register your
