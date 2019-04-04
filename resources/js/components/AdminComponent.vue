@@ -1,17 +1,24 @@
 <template>
-    <div class="col-md-12">
-        <md-table v-model="orders" md-sort="id" md-sort-order="asc" md-card>
-          <md-table-toolbar><h1 class="md-title">Pedidos</h1></md-table-toolbar>
-          <md-table-row slot="md-table-row" slot-scope="{ item }">
-            <md-table-cell md-label="#" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
-            <md-table-cell md-label="Fecha">{{ item.created_at | formatCreatedAt }}</md-table-cell>
-            <md-table-cell md-label="Nombre">{{ item.user.name }}</md-table-cell>
-            <md-table-cell md-label="Teléfono">{{ item.user.phone }}</md-table-cell>
-            <md-table-cell md-label="Huevos">{{ item.skus | formatSkus }}</md-table-cell>
-          </md-table-row>
-        </md-table>
+    <div class="container">
+        <div class="col-md-12">
+            <md-table v-model="orders" md-sort="id" md-sort-order="desc" md-card>
+              <md-table-toolbar>
+                <h1 class="md-title">Pedidos</h1>
+              </md-table-toolbar>
+              <md-table-row slot="md-table-row" slot-scope="{ item }">
+                <md-table-cell md-label="#" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
+                <md-table-cell md-label="Fecha">{{ item.created_at | formatCreatedAt }}</md-table-cell>
+                <md-table-cell md-label="Nombre">{{ item.user.name }}</md-table-cell>
+                <md-table-cell md-label="Teléfono">{{ item.user.phone }}</md-table-cell>
+                <md-table-cell md-label="Huevos" class="text-center">{{ item.skus.length }}</md-table-cell>
+                <md-table-cell md-label="Detalle">{{ item.skus | formatSkus }}</md-table-cell>
+              </md-table-row>
+            </md-table>
+        </div>
+        <div v-if="totalSkus" class="col-md-12 text-right pr-4 pt-2">
+            <span class="md-subheading">Total: {{ totalSkus }} huevos</span>
+        </div>
     </div>
-
 </template>
 
 <script>
@@ -47,6 +54,7 @@
             orders: [],
             errorLoadingOrders: false,
             loadingOrders: null,
+            totalSkus: null,
         }),
         computed: {
         },
@@ -58,6 +66,7 @@
                 this.loadingOrders = true
                 this.axios.get('/api/orders').then((response) => {
                     this.orders = response.data
+                    this.orders.forEach(order => this.totalSkus += order.skus.length)
                 }).catch((error) => {
                     this.errorDialogOrders = true
                 }).finally((response) => {
