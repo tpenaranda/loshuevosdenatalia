@@ -1,8 +1,23 @@
 <template>
-    <md-card-header class="p-0">
-        <div class="md-display-1 text-center p-2 text-light bg-primary">ARTESANALES Y PERSONALIZADOS</div>
-        <div class="md-body-1 text-center pb-2 text-light bg-primary">
-            ¡Estamos a {{ days_from_easter_text }} de pascuas!
+    <md-card-header class="bg-primary">
+        <div class="md-layout md-gutter md-alignment-center-center pb-2">
+            <div class="md-layout-item md-size-15">
+                <span class="md-display-1">🐰</span>
+            </div>
+            <div class="md-layout-item md-size-70 text-light">
+                <div class="md-headline pt-1 pb-1 text-center">ARTESANALES PERSONALIZADOS</div>
+            </div>
+            <div class="md-layout-item md-size-15">
+                <span class="md-display-1">🍫</span>
+            </div>
+        </div>
+        <div class="md-layout md-gutter md-alignment-center-center text-light text-center">
+            <div class="md-layout-item md-size-100">
+                <div class="md-title pb-2">¡Y muy ricos!</div>
+            </div>
+            <div class="md-layout-item md-size-100">
+                <div class="md-body-1">Encargá yaaa que estamos a {{ days_from_easter_text }} de pascuas.</div>
+            </div>
         </div>
     </md-card-header>
 </template>
