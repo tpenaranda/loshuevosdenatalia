@@ -5,7 +5,7 @@
                 <span class="md-display-1">🐰</span>
             </div>
             <div class="md-layout-item md-size-70 text-light">
-                <div class="md-headline pt-1 pb-1 text-center">ARTESANALES PERSONALIZADOS</div>
+                <div class="md-headline pt-1 pb-1 text-center">ARTESANALES<br>PERSONALIZADOS</div>
             </div>
             <div class="md-layout-item md-size-15 text-center">
                 <span class="md-display-1">🍫</span>
