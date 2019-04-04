@@ -1,13 +1,13 @@
 <template>
     <md-card-header class="bg-primary">
         <div class="md-layout md-gutter md-alignment-center-center pb-2">
-            <div class="md-layout-item md-size-15">
+            <div class="md-layout-item md-size-15 text-center">
                 <span class="md-display-1">🐰</span>
             </div>
             <div class="md-layout-item md-size-70 text-light">
                 <div class="md-headline pt-1 pb-1 text-center">ARTESANALES PERSONALIZADOS</div>
             </div>
-            <div class="md-layout-item md-size-15">
+            <div class="md-layout-item md-size-15 text-center">
                 <span class="md-display-1">🍫</span>
             </div>
         </div>
