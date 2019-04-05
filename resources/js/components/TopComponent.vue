@@ -33,7 +33,7 @@
 
 <style lang="scss" scoped>
     #main_image {
-        background: url(/images/easter_eggs.jpg);
+        background: url(/images/background.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
