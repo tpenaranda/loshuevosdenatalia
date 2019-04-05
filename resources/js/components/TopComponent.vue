@@ -37,7 +37,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         position: relative;
-        height: 65vh;
+        height: 70vh;
     }
     .more-information {
         position: absolute;
