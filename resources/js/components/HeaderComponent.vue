@@ -1,6 +1,6 @@
 <template>
-    <md-card-header class="bg-primary">
-        <div class="md-layout md-gutter md-alignment-center-center pb-2">
+    <md-card-header class="bg-primary pt-1 pb-1">
+        <div class="md-layout md-gutter md-alignment-center-center pb-1">
             <div class="md-layout-item md-size-15 text-center">
                 <span class="md-display-1">🐰</span>
             </div>
