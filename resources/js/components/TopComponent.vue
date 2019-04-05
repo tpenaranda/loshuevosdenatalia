@@ -20,7 +20,7 @@
         },
         data: () => ({
             detailsDialog: false,
-            detailsContent: "Los huevos están hechos con cocholate <i>Mapsacuber</i>, semiamargo y blanco.<br><br>Rellenos de:<ul><li>Confites frutales</li><li>Confites huesitos</li><li>Confites de chocolate</li><li>Caramelos masticables</li></ul>Pequeño: 10cm ($80)<br>Grande: 12cm ($120)<br>Gigante: 30cm 2,5Kg ($1050)<br><br>Envíos a domicilio.<br>341-2770962<br><br>Nati",
+            detailsContent: "Los huevos están hechos con cocholate <i>Mapsacuber</i>, semiamargo y blanco.<br>Rellenos de:<ul><li>Confites frutales</li><li>Confites huesitos</li><li>Confites de chocolate</li><li>Caramelos masticables</li></ul>Pequeño: 10cm ($80)<br>Grande: 12cm ($120)<br>Gigante: 30cm 2,5Kg ($1050)<br><br>Envíos a domicilio en Rosario.<br>341-2770962<br>@natimauro_<br><br>Nati",
         }),
         computed: {
         },

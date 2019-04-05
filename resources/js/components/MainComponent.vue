@@ -4,7 +4,7 @@
             <md-card class="md-layout-item">
                 <md-card-header class="py-3">
                     <div class="md-headline">Anotate en la lista</div>
-                    <div class="md-subhead">Te llamamos, coordinamos y te los llevamos a domicilio!</div>
+                    <div class="md-subhead">Te llamamos, coordinamos y te los llevamos a domicilio! <a href="//instagram.com/natimauro_">@natimauro_</a></div>
                 </md-card-header>
                 <md-card-content>
                     <div v-if="!loadingSkus && !sending">
