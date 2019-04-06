@@ -11,7 +11,9 @@
                 <md-table-cell md-label="Nombre">{{ item.user.name }}</md-table-cell>
                 <md-table-cell md-label="Teléfono">{{ item.user.phone }}</md-table-cell>
                 <md-table-cell md-label="Huevos" class="text-center">{{ item.skus.length }}</md-table-cell>
-                <md-table-cell md-label="Detalle">{{ item.skus | formatSkus }}</md-table-cell>
+                <md-table-cell md-label="Detalle">
+                    <div v-for="sku in item.skus">{{ sku | formatSku }}</div>
+                </md-table-cell>
               </md-table-row>
             </md-table>
         </div>
@@ -46,8 +48,8 @@
 
                 return output.substr(0,1).toUpperCase() + output.substr(1);
             },
-            formatSkus (skus) {
-                return skus.map((sku) => `${sku.name} (${sku.data['text']}) [${sku.data['flavor']}]`).join(" - ")
+            formatSku (sku) {
+                return `${sku.name} (${sku.data['text']}) [${sku.data['flavor']}]`
             }
         },
         data: () => ({
