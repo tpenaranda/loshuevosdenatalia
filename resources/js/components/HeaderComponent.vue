@@ -32,7 +32,7 @@
         filters: {
         },
         data: () => ({
-            easter_date: '2019-04-21',
+            easter_date: '2020-04-21',
         }),
         computed: {
             days_from_easter_text () {
