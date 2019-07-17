@@ -12,7 +12,7 @@ class SkusTableSeeder extends Seeder
      */
     public function run()
     {
-        $skus = [
+        collect([
             [
                 'name' => 'Pequeño',
                 'price' => 80,
@@ -25,13 +25,6 @@ class SkusTableSeeder extends Seeder
                 'name' => 'Gigante',
                 'price' => 1050,
             ],
-        ];
-
-        foreach ($skus as $sku) {
-            Sku::updateOrCreate(['slug' => str_slug($sku['name'])], [
-                'name' => $sku['name'],
-                'price' => $sku['price'],
-            ]);
-        }
+        ])->mapInto(Sku::class)->each->save();
     }
 }

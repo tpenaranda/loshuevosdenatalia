@@ -30,11 +30,15 @@ class Sku extends Model
 
     protected $appends = ['data'];
 
-    public function getDataAttribute()
+    public function setNameAttribute(string $value)
     {
-        if (!empty($this->pivot)) {
-            return $this->pivot->data;
-        }
+        $this->slug = str_slug($value);
+
+        return $this->attributes['name'] = $value;
     }
 
+    public function getDataAttribute()
+    {
+        return empty($this->pivot) ? null : $this->pivot->data;
+    }
 }

@@ -35,15 +35,6 @@ class User extends Authenticatable
         'updated_at',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
-
     public function orders(): HasMany
     {
         return $this->hasMany(Order::class);

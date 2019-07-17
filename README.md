@@ -1,5 +1,7 @@
 # Los Huevos de Natalia
-## Nati hace los huevos, vos los comprás.
+### A fancy form to buy easter eggs and an admin panel to have a look to orders placed.
+
+![App screenshot](https://raw.githubusercontent.com/tpenaranda/loshuevosdenati/master/screenshot.png)
 
 ## Requirements
 
