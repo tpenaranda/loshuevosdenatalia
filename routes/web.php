@@ -15,4 +15,4 @@ Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
 Route::get('/admin', 'AdminController@index')->name('admin');
 
-Route::get('/{anything?}', function () { return view('closed'); });
+Route::get('/{anything?}', function () { return config('store.open') ? view('main') : view('closed'); });

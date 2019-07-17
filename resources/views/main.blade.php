@@ -29,7 +29,7 @@
         </div>
         <div class="md-layout md-gutter">
             <div class="md-layout-item pt-2">
-                <div class="md-caption text-center">
+                <div class="md-caption" align="center">
                     <p>Made with <span class="text-danger">❤</span> at Rosario</p>
                 </div>
             </div>
