@@ -1,5 +1,5 @@
 # Los Huevos de Nati
-A fancy form to buy easter eggs and an admin panel to have a look to orders placed.
+A fancy responsive form to buy easter eggs and an admin panel to have a look to orders placed. Laravel & VueJS.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/tpenaranda/loshuevosdenati/master/screenshot.png" alt="App screenshot"/>
