@@ -1,7 +1,10 @@
-# Los Huevos de Natalia
-### A fancy form to buy easter eggs and an admin panel to have a look to orders placed.
+# Los Huevos de Nati
+A fancy form to buy easter eggs and an admin panel to have a look to orders placed.
 
-![App screenshot](https://raw.githubusercontent.com/tpenaranda/loshuevosdenati/master/screenshot.png)
+### Screenshot
+<p align="center">
+  <img src="https://raw.githubusercontent.com/tpenaranda/loshuevosdenati/master/screenshot.png" alt="App screenshot"/>
+</p>
 
 ## Requirements
 
@@ -17,7 +20,7 @@
 * MySQL
 * npm
 
-# Install
+## Install
 
 1. `git clone git@github.com:tpenaranda/loshuevosdenati`
 
