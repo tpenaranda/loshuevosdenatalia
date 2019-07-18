@@ -19,3 +19,9 @@ Route::apiResource('orders', 'API\OrderController', ['only' => 'index']);
 Route::middleware('throttle:10,1')->group(function () {
     Route::apiResource('orders', 'API\OrderController', ['only' => 'store']);
 });
+
+Route::middleware('auth')->prefix('store')->group(function () {
+    Route::get('', 'API\StoreController@get');
+    Route::put('close', 'API\StoreController@close');
+    Route::put('open', 'API\StoreController@open');
+});

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\{Order, User};
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class OrderController extends Controller
 {
@@ -15,6 +16,10 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        if (app('store')->isClosed()) {
+            throw ValidationException::withMessages(['store' => ['Store is closed.']]);
+        }
+
         $request->validate([
             'data.notes' => 'string|nullable',
             'data.skus' => 'array',

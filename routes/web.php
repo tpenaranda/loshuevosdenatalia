@@ -13,6 +13,10 @@
 
 Auth::routes(['register' => false, 'reset' => false, 'verify' => false]);
 
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::middleware('auth')->get('/admin', function () {
+    return view('dashboard');
+});
 
-Route::get('/{anything?}', function () { return config('store.open') ? view('main') : view('closed'); });
+Route::get('/{anything?}', function () {
+    return app('store')->isClosed() ? view('closed') : view('main');
+});

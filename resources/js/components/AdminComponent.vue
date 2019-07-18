@@ -1,5 +1,22 @@
 <template>
     <div class="container">
+        <div class="row m-3">
+            <div class="col text-center my-auto p-2">
+                <toggle-button
+                    :font-size="15"
+                    :height="30"
+                    :width="100"
+                    :sync="true"
+                    :disabled="storeStatusButtonDisabled || storeOpen === null"
+                    :labels="{checked: 'Abierto', unchecked: 'Cerrado'}"
+                    v-model="storeOpen"
+                    @input="storeStatusButtonInput"
+                />
+            </div>
+            <div class="col text-center my-auto p-2">
+                <button type="button" class="btn btn-success" @click="logout">Logout</button>
+            </div>
+        </div>
         <div class="col-md-12">
             <md-table v-model="orders" md-sort="id" md-sort-order="desc" md-card>
               <md-table-toolbar>
@@ -25,23 +42,10 @@
 
 <script>
     import moment from 'moment-timezone'
-    import { validationMixin } from 'vuelidate'
-    import {
-        between,
-        integer,
-        maxLength,
-        minLength,
-        minValue,
-        required
-    } from 'vuelidate/lib/validators'
+    import { ToggleButton } from 'vue-js-toggle-button'
 
     export default {
-        name: 'MainComponent',
-        mixins: [
-            validationMixin
-        ],
-        components: {
-        },
+        name: 'AdminComponent',
         filters: {
             formatCreatedAt (value) {
                 let output = moment.tz(value, 'UTC').tz(moment.tz.guess()).locale('es').calendar()
@@ -53,17 +57,33 @@
             }
         },
         data: () => ({
-            orders: [],
             errorLoadingOrders: false,
             loadingOrders: null,
-            totalSkus: null,
+            orders: [],
+            storeOpen: null,
+            storeStatusButtonDisabled: false,
+            totalSkus: null
         }),
-        computed: {
+        components: {
+            ToggleButton
         },
         mounted () {
             this.getOrders()
+            this.getStore()
         },
         methods: {
+            logout() {
+                this.axios.post('/logout').then((response) => {
+                    window.location.href = '/'
+                })
+            },
+            storeStatusButtonInput(value) {
+                this.storeStatusButtonDisabled = true
+                this.axios.put(`/api/store/${value ? 'open' : 'close'}`).then((response) => {
+                    this.storeOpen = response.data.open
+                    this.storeStatusButtonDisabled = false
+                })
+            },
             getOrders() {
                 this.loadingOrders = true
                 this.axios.get('/api/orders').then((response) => {
@@ -75,9 +95,18 @@
                     this.loadingOrders = false
                 })
             },
+            getStore() {
+                this.axios.get('/api/store').then((response) => {
+                    this.storeOpen = response.data.open
+                })
+            }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+  label {
+    display: inline-block;
+    margin: 0;
+  }
 </style>

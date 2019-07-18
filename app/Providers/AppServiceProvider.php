@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Store;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,16 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
-    }
-
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
+        $this->app->singleton('store', function ($app) {
+            return app(Store::class);
+        });
     }
 }
