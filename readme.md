@@ -23,11 +23,11 @@ A fancy responsive form to buy customized easter eggs and an admin panel to have
 
 ## Install
 
-1. `git clone git@github.com:tpenaranda/loshuevosdenati`
+1. `git clone https://github.com/tpenaranda/loshuevosdenati`
 
-2. Rename `.env.example` file to `.env` and configure DB and Redis values
+2. Create empty mysql database.
 
-3. Create database.
+3. Rename `.env.example` file to `.env` and configure DB and Redis values
 
 4. `composer update`
 
