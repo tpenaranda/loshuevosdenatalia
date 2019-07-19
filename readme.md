@@ -16,14 +16,16 @@ A fancy responsive form to buy customized easter eggs and an admin panel to have
     * PDO PHP Extension
     * Tokenizer PHP Extension
     * XML PHP Extension
+* Composer
 * MySQL
+* Redis
 * npm
 
 ## Install
 
 1. `git clone git@github.com:tpenaranda/loshuevosdenati`
 
-2. Rename `.env.example` file to `.env` and configure DB values
+2. Rename `.env.example` file to `.env` and configure DB and Redis values
 
 3. Create database.
 
